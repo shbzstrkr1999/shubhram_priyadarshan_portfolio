@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Shubhram Priyadarshan: QA automation engineer and Data Science (AI/ML) student in Nuremberg.">
+<title>Shubhram Priyadarshan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: 'var(--bg)', surface: 'var(--surface)', line: 'var(--line)',
+          fg: 'var(--fg)', muted: 'var(--muted)', accent: 'var(--accent)', mint: 'var(--mint)',
+          onaccent: 'var(--on-accent)', fail: 'var(--fail)'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'Menlo', 'monospace']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  /* Layout: single column, dark-first. Hero pairs a headline with a pytest-style result panel built from real CV numbers. */
+  :root {
+    --bg: #121212; --surface: #1a1a1a; --line: #2c2c2c;
+    --fg: #d8d8d8; --muted: #9a9a9a;
+    --accent: #e6e6e6; --mint: #bcbcbc; --on-accent: #121212; --fail: #c4c4c4;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f3f3f2; --surface: #fbfbfa; --line: #d9d9d7;
+      --fg: #262626; --muted: #5f5f5f;
+      --accent: #1a1a1a; --mint: #4a4a4a; --on-accent: #f3f3f2; --fail: #4a4a4a;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f3f3f2; --surface: #fbfbfa; --line: #d9d9d7;
+    --fg: #262626; --muted: #5f5f5f;
+    --accent: #1a1a1a; --mint: #4a4a4a; --on-accent: #f3f3f2; --fail: #4a4a4a;
+    color-scheme: light;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body { background: var(--bg); color: var(--fg); font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-size: 16px; line-height: 1.65; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+  .gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 68rem; margin-inline: auto; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; text-wrap: balance; letter-spacing: -0.02em; }
+  .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.15rem; font-weight: 600; font-size: .95rem; border-radius: 6px; border: 1px solid var(--line); transition: border-color .15s, transform .15s, background .15s; }
+  .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .btn-primary:hover { background: var(--mint); border-color: var(--mint); }
+  .chip { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; padding: .2rem .55rem; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; transition: border-color .2s; }
+  .card:hover { border-color: var(--accent); }
+  .glow { background: radial-gradient(60rem 28rem at 85% -10%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 60%); }
+  .tl { position: relative; padding-left: 1.75rem; border-left: 1px solid var(--line); }
+  .tl::before { content: ""; position: absolute; left: -5px; top: .55rem; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg); }
+  .tl.edu::before { background: var(--mint); }
+  .field { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: .7rem .85rem; font: inherit; }
+  .field:focus { border-color: var(--accent); }
+  .navlink { color: var(--muted); transition: color .15s; }
+  .navlink:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<header class="sticky z-50 border-b border-line" style="top: env(safe-area-inset-top, 0px); background: var(--bg);">
+  <div class="gutter">
+    <div class="wrap flex items-center justify-between h-16 gap-4">
+      <a href="#top" class="font-display font-bold text-lg tracking-tight">SP<span class="text-accent">.</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm" aria-label="Primary">
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="theme" type="button" class="btn !py-2 !px-3" aria-label="Toggle light or dark theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary !py-2">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="glow gutter">
+    <div class="wrap grid lg:grid-cols-[1.15fr_1fr] gap-12 items-center py-16 md:py-24">
+      <div class="min-w-0">
+        <p class="label mb-5">Open to data science and software engineering roles</p>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          I make software and AI systems prove they work.
+        </h1>
+        <p class="mt-6 text-lg text-muted max-w-xl">
+          Shubhram Priyadarshan. QA automation engineer with almost five years in healthcare software, now a Master's student in Data Science (AI/ML) building backends and machine learning pipelines in Python.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="Shubhram_Priyadarshan_CV.pdf" target="_blank" rel="noopener" class="btn">Download resume</a>
+          <a href="#contact" class="btn">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="min-w-0 card font-mono text-[13px] leading-7 overflow-hidden" role="img" aria-label="Summary of results: regression suite grew from 50 to over 200 tests, regression time cut from 4 days to 2, 75 percent automation coverage, 3,276 water samples classified.">
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-line text-muted">
+          <span class="w-2.5 h-2.5 rounded-full" style="background: var(--fail)"></span>
+          <span class="w-2.5 h-2.5 rounded-full" style="background: var(--accent)"></span>
+          <span class="w-2.5 h-2.5 rounded-full" style="background: var(--mint)"></span>
+          <span class="ml-2 text-xs">pytest · career_so_far.py</span>
+        </div>
+        <div class="p-4 sm:p-5 overflow-x-auto">
+          <div class="whitespace-nowrap">
+            <div class="text-muted">collected 4 items</div>
+            <div class="mt-2"><span class="text-mint">PASSED</span> test_regression_suite_size <span class="text-muted">50 → 200+ cases</span></div>
+            <div><span class="text-mint">PASSED</span> test_regression_cycle <span class="text-muted">4 days → 2 days</span></div>
+            <div><span class="text-mint">PASSED</span> test_automation_coverage <span class="text-muted">75%</span></div>
+            <div><span class="text-mint">PASSED</span> test_ai_judge_agents <span class="text-muted">Pytest + TestRail</span></div>
+            <div class="mt-2 text-muted">------ 4 passed · 4.9 years ------</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="gutter border-t border-line">
+    <div class="wrap grid md:grid-cols-[1fr_1.6fr] gap-10 py-16 md:py-20">
+      <div>
+        <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border border-line mb-7 bg-surface grid place-items-center font-display font-bold text-4xl text-muted">SP<img src="profile.jpg" alt="Portrait of Shubhram Priyadarshan" class="absolute inset-0 w-full h-full object-cover" style="filter: grayscale(1) contrast(.95)" onerror="this.remove()"></div>
+        <p class="label mb-3">About</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl">Making software dependable, and now building it.</h2>
+      </div>
+      <div class="min-w-0 space-y-5 text-muted text-[1.05rem]">
+        <p>I am a software quality engineer with almost five years in healthcare technology, first at Saveo Healthtech and then at IQVIA-IMS Health Analytics. The work was never just clicking through screens. I wrote Java and Python, designed reusable framework utilities, ran headless suites in GitLab CI/CD and checked data in SQL. I am comfortable reading and writing production code, not only testing it.</p>
+        <p>At IQVIA I was the only automation engineer on a three-person QA team and owned the automation strategy. I grew regression coverage from 50 to over 200 tests, reached 75% automation and cut a four-day regression cycle to two. At Saveo I owned QA for the inventory system end to end and load tested a gamification platform before a launch that contributed to a 30% rise in GMV.</p>
+        <p>My last project at IQVIA sits closest to where I am heading: a Pytest framework that validates AI judge agents, the models that score other models. Working out whether a model's judgment can be trusted is what pulled me toward machine learning.</p>
+        <p>I am now doing a Master's in Data Science (AI/ML) at SRH University in Fürth, and building alongside it. LectAI is a live full-stack app on FastAPI, MySQL, React and the Gemini API. My water potability classifier is smaller, with 66% accuracy and a ROC-AUC of 0.65, and I report it as it is.</p>
+        <div class="card !border-line p-5 !mt-8 text-fg">
+          <p class="label mb-4">Open to work</p>
+          <div class="grid sm:grid-cols-3 gap-5">
+            <div><h3 class="font-display font-bold text-base">Data science and ML</h3><p class="text-muted text-sm mt-1">Modelling, data pipelines, model evaluation and validation.</p></div>
+            <div><h3 class="font-display font-bold text-base">Software engineering</h3><p class="text-muted text-sm mt-1">Backend and full-stack work in Python or Java.</p></div>
+            <div><h3 class="font-display font-bold text-base">QA and test automation</h3><p class="text-muted text-sm mt-1">SDET roles and validation of AI systems.</p></div>
+          </div>
+          <p class="text-muted text-sm mt-5">Based in Nuremberg, Germany. English C1, German A2.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">FastAPI</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">Test automation</span><span class="chip">AI model validation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="gutter border-t border-line">
+    <div class="wrap py-16 md:py-20">
+      <p class="label mb-3">Projects</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mb-10 max-w-2xl">Things I have built and shipped.</h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="card p-6 flex flex-col gap-4 min-w-0">
+          <div>
+            <p class="label mb-2">Full-stack · Live</p>
+            <h3 class="font-display font-bold text-2xl">LectAI</h3>
+            <p class="text-muted mt-2">An AI learning platform. Students upload lecture material and get study notes, summaries and quizzes generated for them.</p>
+          </div>
+          <ul class="text-muted text-[.95rem] space-y-2 list-disc pl-5">
+            <li>Layered FastAPI backend with REST APIs, SQLAlchemy, MySQL and JWT authentication.</li>
+            <li>React and TypeScript frontend with sessions and lecture management.</li>
+            <li>Gemini API integration with structured responses for summaries and quizzes.</li>
+            <li>Dockerised, with frontend and backend deployed independently.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">MySQL</span><span class="chip">Docker</span><span class="chip">Gemini API</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-3 pt-2">
+            <a class="btn btn-primary" href="https://edu-ai-platform-n34i.onrender.com/" target="_blank" rel="noopener">Live demo</a>
+            <!-- Replace with the LectAI repository URL once it is public -->
+            <a class="btn" href="https://github.com/shbzstrkr1999" target="_blank" rel="noopener">View code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card p-6 flex flex-col gap-4 min-w-0">
+          <div>
+            <p class="label mb-2">Machine learning</p>
+            <h3 class="font-display font-bold text-2xl">Water Potability Prediction</h3>
+            <p class="text-muted mt-2">An end-to-end pipeline that classifies 3,276 water samples as drinkable or not from nine physicochemical measurements.</p>
+          </div>
+          <ul class="text-muted text-[.95rem] space-y-2 list-disc pl-5">
+            <li>KNN imputation for missing pH, sulfate and trihalomethanes, chosen over mean or median to keep feature distributions.</li>
+            <li>EDA found weak linear relationships and a 61/39 class imbalance.</li>
+            <li>Random Forest raised ROC-AUC from 0.548 (logistic regression) to 0.647, tuned with GridSearchCV and 5-fold cross-validation.</li>
+            <li>Best model: 65.85% accuracy, F1 0.414. No single feature separates the classes well.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-learn</span><span class="chip">Seaborn</span><span class="chip">Jupyter</span>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-3 pt-2">
+            <a class="btn btn-primary" href="https://github.com/shbzstrkr1999/machine_learning_project" target="_blank" rel="noopener">View code on GitHub</a>
+          </div>
+        </article>
+      </div>
+
+      <article class="card p-6 mt-5 grid md:grid-cols-[1fr_auto] gap-4 items-center min-w-0">
+        <div class="min-w-0">
+          <p class="label mb-2">Tooling · Fork</p>
+          <h3 class="font-display font-bold text-xl">ai-job-search</h3>
+          <p class="text-muted mt-1">A local AI framework built on Claude Code for evaluating job postings, tailoring CVs and cover letters, and preparing for interviews. Forked from MadsLorentzen/ai-job-search and adapted to my own workflow.</p>
+        </div>
+        <a class="btn" href="https://github.com/shbzstrkr1999/ai-job-search" target="_blank" rel="noopener">View code on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="gutter border-t border-line">
+    <div class="wrap py-16 md:py-20">
+      <p class="label mb-3">Skills</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl mb-10">Tools I work with.</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">Development</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">SQLAlchemy</span></div>
+        </div>
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">Data science and ML</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Jupyter</span><span class="chip">GridSearchCV</span><span class="chip">Gemini API</span><span class="chip">AI model validation</span></div>
+        </div>
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">Test automation</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Selenium</span><span class="chip">TestNG</span><span class="chip">Pytest</span><span class="chip">JUnit</span><span class="chip">Postman</span><span class="chip">JMeter</span><span class="chip">BackstopJS</span><span class="chip">TestRail</span></div>
+        </div>
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">DevOps and databases</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">GitLab CI/CD</span><span class="chip">Docker</span><span class="chip">SonarQube</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Git</span></div>
+        </div>
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">Testing practice</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">API testing</span><span class="chip">Regression</span><span class="chip">Performance</span><span class="chip">Security</span><span class="chip">Visual regression</span><span class="chip">End-to-end</span></div>
+        </div>
+        <div class="card p-5 min-w-0">
+          <h3 class="font-display font-bold text-lg mb-3">Process and languages</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">Agile</span><span class="chip">English C1</span><span class="chip">German A2</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="gutter border-t border-line">
+    <div class="wrap grid md:grid-cols-[1fr_1.8fr] gap-10 py-16 md:py-20">
+      <div>
+        <p class="label mb-3">Experience and education</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl">Where I have worked and studied.</h2>
+      </div>
+      <div class="min-w-0 space-y-10">
+        <div class="tl edu">
+          <p class="label !text-mint">Present</p>
+          <h3 class="font-display font-bold text-xl mt-1">M.Sc. Data Science (AI/ML)</h3>
+          <p class="text-muted">SRH University, Fürth, Germany</p>
+        </div>
+        <div class="tl">
+          <p class="label">03/2023 – 03/2026</p>
+          <h3 class="font-display font-bold text-xl mt-1">Software Automation Engineer II</h3>
+          <p class="text-muted mb-3">IQVIA-IMS Health Analytics, India</p>
+          <ul class="text-muted space-y-2 list-disc pl-5 text-[.97rem]">
+            <li>Built a Python and Pytest framework to validate AI judge agents that evaluate downstream model performance, with results pushed to TestRail.</li>
+            <li>Grew regression coverage from 50 to 200+ Selenium, Java and TestNG tests, reaching 75% automation.</li>
+            <li>Cut the regression cycle by 50%, from 4 days to 2.</li>
+            <li>Owned automation strategy as the sole automation engineer on a three-person QA team.</li>
+            <li>Ran headless suites in GitLab CI/CD across several environments, with API checks in Postman and visual regression in BackstopJS.</li>
+          </ul>
+        </div>
+        <div class="tl">
+          <p class="label">04/2021 – 02/2023</p>
+          <h3 class="font-display font-bold text-xl mt-1">Software Test Engineer</h3>
+          <p class="text-muted mb-3">Saveo Healthtech Pvt Ltd, India</p>
+          <ul class="text-muted space-y-2 list-disc pl-5 text-[.97rem]">
+            <li>Owned end-to-end QA for the Inventory Management System, including returns, damaged items and cron-driven inventory updates.</li>
+            <li>Load tested a customer gamification platform ahead of a launch that contributed to a 30% increase in GMV.</li>
+            <li>Tested microservices through APIs, JWT authentication and inter-service communication.</li>
+            <li>Won two "Saviour of the Month" awards.</li>
+          </ul>
+        </div>
+        <div class="tl edu">
+          <p class="label !text-mint">2021</p>
+          <h3 class="font-display font-bold text-xl mt-1">B.Tech Computer Science</h3>
+          <p class="text-muted">Presidency University, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="gutter border-t border-line">
+    <div class="wrap grid md:grid-cols-2 gap-10 py-16 md:py-20">
+      <div class="min-w-0">
+        <p class="label mb-3">Contact</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl">Hiring for data science or software engineering? Let's talk.</h2>
+        <p class="text-muted mt-5">I am based in Nuremberg and open to roles in data science, software engineering and test automation.</p>
+        <div class="mt-6 flex items-center gap-3 flex-wrap">
+          <span id="email" class="font-mono text-sm break-all select-all">shubhrampriyadarshan1@gmail.com</span>
+          <button id="copy" type="button" class="btn !py-1.5 !px-3 text-sm">Copy</button>
+        </div>
+        <ul class="mt-6 space-y-2">
+          <li><a class="navlink underline underline-offset-4" href="https://www.linkedin.com/in/shubhram-priyadarshan" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a class="navlink underline underline-offset-4" href="https://github.com/shbzstrkr1999" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a class="navlink underline underline-offset-4" href="https://gitlab.com/shbzstrkr1" target="_blank" rel="noopener">GitLab</a></li>
+        </ul>
+      </div>
+
+      <form id="form" class="card p-6 space-y-4 min-w-0" novalidate>
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-1.5">Name</label>
+          <input id="name" name="name" class="field" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="from" class="block text-sm font-semibold mb-1.5">Your email</label>
+          <input id="from" name="from" type="email" class="field" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="msg" class="block text-sm font-semibold mb-1.5">Message</label>
+          <textarea id="msg" name="msg" rows="5" class="field" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p id="status" class="text-sm text-muted min-h-[1.5rem]" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="gutter border-t border-line">
+  <div class="wrap py-8 flex flex-wrap justify-between gap-3 text-sm text-muted">
+    <span>© <span id="yr">2026</span> Shubhram Priyadarshan</span>
+    <span class="font-mono">Nuremberg, Germany</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // Set to a Formspree (or similar) endpoint to post the form directly. Empty uses the visitor's email app.
+    var FORM_ENDPOINT = '';
+    var EMAIL = 'shubhrampriyadarshan1@gmail.com';
+    var root = document.documentElement;
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    var btn = document.getElementById('theme');
+    try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+    btn.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    var copy = document.getElementById('copy');
+    copy.addEventListener('click', function () {
+      var done = function () { copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = 'Copy'; }, 1800); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        copy.textContent = 'Press Ctrl+C';
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(EMAIL).then(done, fallback);
+      } else { fallback(); }
+    });
+
+    var form = document.getElementById('form');
+    var status = document.getElementById('status');
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var name = form.name.value.trim(), from = form.from.value.trim(), msg = form.msg.value.trim();
+      if (!name || !/^\S+@\S+\.\S+$/.test(from) || !msg) {
+        status.style.color = 'var(--fail)';
+        status.textContent = 'Please fill in your name, a valid email and a message.';
+        return;
+      }
+      status.style.color = 'var(--muted)';
+      if (FORM_ENDPOINT) {
+        status.textContent = 'Sending…';
+        fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name: name, email: from, message: msg }) })
+          .then(function (r) { if (!r.ok) throw new Error(); status.style.color = 'var(--mint)'; status.textContent = 'Message sent. Thank you.'; form.reset(); })
+          .catch(function () { status.style.color = 'var(--fail)'; status.textContent = 'Could not send. Please email me directly at ' + EMAIL + '.'; });
+      } else {
+        var body = msg + '\n\n' + name + ' (' + from + ')';
+        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Portfolio enquiry from ' + name) + '&body=' + encodeURIComponent(body);
+        status.textContent = 'If your email app did not open, copy my address above and write to me directly.';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
